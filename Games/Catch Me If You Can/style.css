@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #E91E63;
+  background: linear-gradient(to top left, #e74c3c, #E91E63);
+  background-size: 550%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+  color: whitesmoke;
+  letter-spacing: 0.2em;
+}
+
+#target {
+  height: 100px;
+  width: 100px;
+  background: whitesmoke;
+  cursor: pointer;
+  color: #E91E63;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 45px;
+}
