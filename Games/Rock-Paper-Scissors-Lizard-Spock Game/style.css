@@ -1,0 +1,435 @@
+/**
+Rock Paper Scissors Lizard Spock Game
+author: @chrisbautista
+website: https://www.codespud.com
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Serif+Pro:ital@1&display=swap");
+
+.visually-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  display: none;
+}
+
+body {
+  font-family: serif;
+  font-family: "Source Serif Pro", serif;
+  background-color: #f1f2f3;
+}
+
+h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 2.3vw;
+  margin-left: 2rem;
+  text-align: left;
+  background: -webkit-linear-gradient(red, green);
+  background: linear-gradient(red, green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  margin-block-end: 0;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 3vw;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 4vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 6vw;
+  }
+}
+
+.cs-game {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  flex-direction: column;
+
+  &-board {
+    border-top: 4px solid #333;
+  }
+}
+
+%-padding-container {
+  font-size: 2rem;
+  padding: 1.5rem 0;
+}
+
+.cs-score {
+  @extend %-padding-container;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cs-win-lose,
+.cs-computer,
+.cs-player {
+  @extend %-padding-container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70%;
+  border-bottom: 4px solid #333;
+}
+
+.cs-player {
+  div {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.win {
+  background-color: rgba(187, 241, 187, 0.5);
+}
+
+.lose {
+  background-color: rgba(214, 187, 187, 0.5);
+}
+
+.tie {
+  background-color: #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+.cs-game-number {
+  padding: 0;
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin: 0 auto;
+  position: relative;
+  top: 8px;
+  left: 8px;
+  color: #333;
+}
+
+.cs-win-lose {
+  border: 3px solid #333;
+  flex-direction: column;
+  padding: 2rem;
+
+  p {
+    padding-top: 0;
+    margin: 0 0 20px;
+    font-size: 3rem;
+  }
+
+  .cs-play-btn {
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffc83d;
+    font-weight: bold;
+    font-family: "Fredoka One", cursive;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    transition: all 0.2s;
+    margin-top: 3rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25),
+      /* Outset shadow */ inset -4px -4px 8px 0 rgba(0, 0, 0, 0.25),
+      /* Dark inset shadow */ inset 4px 4px 8px 0 rgba(255, 255, 255, 0.4); /* Light inset shadow */
+
+    &:hover {
+      transform: rotate(-10deg);
+    }
+  }
+}
+
+%-hand {
+  border: none;
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 0.9rem;
+  font-size: 3rem;
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: text-shadow 0.4s;
+}
+
+@keyframes popleft {
+  50% {
+    transform: scale(-1.2, 1.2) rotate(90deg);
+  }
+}
+
+@keyframes popleft2 {
+  50% {
+    transform: scale(-1.2, 1.2) rotate(0deg);
+  }
+}
+
+@keyframes popright {
+  50% {
+    transform: scale(1.2, 1.2) rotate(90deg);
+  }
+}
+
+@keyframes popright2 {
+  50% {
+    transform: scale(1.2, 1.2) rotate(0deg);
+  }
+}
+
+.cs-computer {
+  color: green;
+  font-family: "Fredoka One", cursive;
+  font-style: bold;
+  font-size: 3rem;
+  padding: 3rem 0;
+  transition: background-color 0.4s ease-out;
+  position: relative;
+
+  @media screen and (max-width: 600px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 420px) {
+    font-size: 1.5rem;
+  }
+
+  div {
+    display: inline-flex;
+  }
+
+  .cs-spacer {
+    width: 4px;
+    background-color: #333;
+  }
+
+  .cs-player-1,
+  .cs-player-2 {
+    position: relative;
+    &[data-choice]:after {
+      @extend %-hand;
+      width: 160px;
+      font-size: 5rem;
+      display: inline-flex;
+      justify-content: center;
+
+      @media screen and (max-width: 600px) {
+        width: 75px;
+        font-size: 3rem;
+      }
+    }
+
+    &[data-choice="0"]:after {
+      content: "🤛";
+    }
+
+    &[data-choice="1"]:after {
+      content: "✋";
+    }
+
+    &[data-choice="2"]:after {
+      content: "✌";
+    }
+
+    &[data-choice="3"]:after {
+      content: "🦎";
+    }
+
+    &[data-choice="4"]:after {
+      content: "🖖";
+    }
+  }
+
+  .cs-player-1 {
+    color: red;
+
+    &[data-choice]:after {
+      transform: scale(-1, 1) rotate(0deg);
+    }
+
+    &[data-choice="2"]:after,
+    &[data-choice="1"]:after {
+      transform: scale(-1, 1) rotate(-90deg);
+    }
+
+    &.enter {
+      &[data-choice]:after {
+        animation: popleft 0.3s ease-out 1;
+      }
+
+      &[data-choice="2"]:after,
+      &[data-choice="1"]:after {
+        animation: popleft2 0.3s ease-out 1;
+      }
+    }
+  }
+
+  .cs-player-2 {
+    flex-direction: row-reverse;
+
+    &[data-choice]:after {
+      transform: scale(1, 1) rotate(0deg);
+    }
+
+    &[data-choice="2"]:after,
+    &[data-choice="1"]:after {
+      transform: scale(1, 1) rotate(-90deg);
+    }
+
+    &.enter {
+      &[data-choice]:after {
+        animation: popright 0.3s ease-out 1;
+      }
+
+      &[data-choice="2"]:after,
+      &[data-choice="1"]:after {
+        animation: popright2 0.3s ease-out 1;
+      }
+    }
+  }
+}
+
+.cs-hand {
+  @extend %-hand;
+  background-color: #ffc83d;
+  width: 150px;
+  height: 150px;
+  margin-right: 12px;
+  margin-top: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  text-shadow: 2px 2px 0 #333, 2px 2px 4px #333, 2px -2px 0 #333,
+    -2px 2px 0 #333, -2px -2px 0 #333, 2px 0px 0 #333, 0px 2px 0 #333,
+    -2px 0px 0 #333, 0px -4px 0 #333;
+
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25),
+    /* Outset shadow */ inset -4px -4px 8px 0 rgba(0, 0, 0, 0.25),
+    /* Dark inset shadow */ inset 4px 4px 8px 0 rgba(255, 255, 255, 0.4); /* Light inset shadow */
+
+  &:before {
+    display: inline-flex;
+    content: attr(data-image);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.clicked {
+    text-shadow: 4px 4px 0 #4074b5, 4px -4px 0 #4074b5, -4px 4px 0 #4074b5,
+      -4px -4px 0 #4074b5, 4px 0px 0 #4074b5, 0px 4px 0 #4074b5,
+      -4px 0px 0 #4074b5, 0px -4px 0 #4074b5;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  padding: 3px;
+  background-color: #f8f9fb;
+  border-radius: 1rem;
+  margin: 1rem auto 0;
+  width: 99px;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 600px) {
+    width: 60px;
+    padding: 0;
+  }
+
+  p {
+    padding-left: 20px;
+    word-break: break-all;
+  }
+
+  label {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+
+  & > div {
+    padding: 1.2rem;
+
+    @media screen and (max-width: 600px) {
+      padding: 0.5rem;
+    }
+  }
+
+  .rule-list {
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+  }
+
+  #toggle-rules + .rule-list {
+    height: 0;
+    width: 0;
+    transition: right 0.8s, width 0.3s ease-out, height 0.3s ease-out;
+    background-color: #f8f9fb;
+    border-radius: 1rem;
+    padding: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  #toggle-rules:checked ~ .rule-list {
+    height: 360px;
+    width: 500px;
+    right: 0;
+    background-color: #f8f9fb;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    @media screen and (max-width: 600px) {
+      width: calc(100vw - 4rem);
+      min-height: 50vh;
+    }
+  }
+
+  strong {
+    margin-left: 8px;
+    font-family: "Fredoka One", cursive;
+    font-size: 1.2rem;
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  i {
+    display: inline-flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
+    top: -4px;
+    left: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: #f1f2f3;
+    margin: 0 10px;
+  }
+
+  li {
+    list-style-type: "👉";
+    padding-inline-start: 1ch;
+  }
+}
