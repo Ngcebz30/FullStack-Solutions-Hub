@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  background: url(https://res.cloudinary.com/beumsk/image/upload/v1523998994/banana.png);
+  background-size: 30px;
+  background-repeat: space;
+}
+
+body {
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  background: rgba(256,256,256,0.8)
+}
+
+header h1 {
+  font-weight: normal;
+  padding: 20px 10px 10px 10px;
+  letter-spacing: 0.1em;
+  border-bottom: double 6px #EB0C42;
+  background: rgba(256, 256, 256, 0.6);
+}
+
+.screen {
+  width: 340px;
+  height: 340px;
+  margin: 10px auto;
+  padding: 0 35px;
+  background: black;
+  outline: solid 10px white;
+}
+
+.status {
+  color: white;
+  font-size: 16px;
+  padding: 15px 5px;
+  height: 40px;
+}
+.score {
+  float: left;
+}
+.score::after {
+  content: " points";
+}
+.time {
+  float: right;
+}
+.time::after {
+  content: " sec"
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin: 5px;
+  border-bottom: double 6px #EB0C42;
+  position: relative;
+  overflow: hidden;
+}
+.box.touched {
+  border-bottom-color: yellow;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  cursor: pointer;
+  transition: top 0.3s;
+}
+
+.modal {
+  position: absolute;
+  background: rgba(0,0,0,0.4);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal div {
+  background: white;
+  width: 320px;
+  margin: 50px auto;
+  padding: 50px;
+  font-size: 20px;
+}
+
+.modal p {
+  padding: 0px 10px 20px;
+}
+
+.modal .end {
+  display: block;
+  padding: 10px;
+  color: #EB0C42;
+  border: double 6px #EB0C42;
+  cursor: pointer;
+  transition: background 0.4s, color 0.4s;
+}
+.modal .end:hover {
+  background: #EB0C42;
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+footer {
+  font-size: 14px;
+  padding: 10px;
+  background: rgba(256, 256, 256, 0.6);
+}
+
+footer a {
+  text-decoration: none;
+  color: #EB0C42;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #000;
+}
