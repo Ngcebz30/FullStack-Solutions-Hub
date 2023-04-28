@@ -6,9 +6,9 @@ The text is stored in a String variable named text. The main loop repeatedly pro
 
 The commands are:
 
-"q" to quit the program
-"w" to write the current text to a file
-"a" to append text from a file to the current text
-"d" to delete all the text
+-  "q" to quit the program
+-  "w" to write the current text to a file
+-  "a" to append text from a file to the current text
+-  "d" to delete all the text
 Any other input is treated as text to be added to the current text.
 The get_file_name function prompts the user for a file name and returns it as a String. The fs module is used to read and write files.
