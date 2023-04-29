@@ -1,4 +1,4 @@
-# Website Blocker
+# Website Blocker 🚫
 
 This is a Python script that blocks access to specified websites during certain hours of the day by redirecting their URLs to `127.0.0.1` in the computer's `hosts` file. 
 
