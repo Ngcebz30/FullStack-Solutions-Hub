@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Ranga');
+body {
+  background-color: black;
+  color: #eddbc3;
+}
+.img-bg { 
+  background: url('http://pre05.deviantart.net/528d/th/pre/f/2016/324/2/9/quentin_tarantino_photo_v3_by_trin003-daozx5a.jpg') no-repeat center center scroll;
+  -webkit-background-size: cover; 
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  min-height: 675px;
+}
+h1 {
+  font-family: 'Lobster', cursive;
+  color: orange;
+  font-size: 70px;
+  margin-top: 350px;
+  margin-bottom: 50px;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+}
+blockquote {
+  border-left: none;
+  color: #eddbc3;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  font-family: 'Ranga', cursive;
+  font-size: 1.7em;
+}
+blockquote p:before {
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.3em;
+}
+blockquote p:after {
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-left: 0.25em;
+  vertical-align: -0.7em;
+}
+.about {
+  margin-top: 70px;
+  margin-bottom: 60px;
+  font-family: 'Ranga', cursive;
+  font-size: 1.4em;
+}
+h2 {
+  padding-bottom: 30px;
+  text-decoration: underline;
+}
+.separator {
+  background-color: orange;
+  height: 25px;
+}
+h3 {
+  font-size: 1.4em !important;
+}
+.timeline {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  font-family: 'Ranga', cursive;
+  font-size: 1.4em;
+  max-width: 650px;
+}
+.panel-group .panel-heading {
+    border-bottom: solid;
+    border-bottom-color: orange;
+}
+.panel, .panel-heading{
+  background-color: black;
+  border-color: orange;
+}
+.panel-heading{
+ color: orange;
+}
+ul{
+  text-align: left;
+  list-style:none;
+}
+.thinner {
+  font-size: 0.7em;
+}
+.foot-separator {
+  background-color: orange;
+  height: 3px;
+}
+footer {
+  margin-top: 70px;
+  margin-bottom: 60px;
+  font-family: 'Ranga', cursive;
+  font-size: 1.4em;
+}
+a {
+  text-decoration: none !important;
+}
+a:link {
+    color: orange;
+}
+a:visited {
+    color: orange;
+}
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+a:active {
+    color: red;
+    text-decoration: none;
+} 
