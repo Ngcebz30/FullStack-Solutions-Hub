@@ -1,6 +1,7 @@
 # Typing Tutor ⌨️
 
-This is a simple command-line program that serves as a typing tutor. The user is presented with a random word and must type it correctly within a certain amount of time. The program then displays the user's typing speed and accuracy.
+This is a simple command-line program that serves as a typing tutor. This program is written in C language and is Betty linter compliant. It allows users to practice their typing skills by displaying random sentences and calculating their typing speed and accuracy. The user is presented with a random word and must type it correctly within a certain amount of time. Users can view their progress history and average performance.
+
 
 ## Requirements
 
