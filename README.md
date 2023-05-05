@@ -1,4 +1,4 @@
-## What is Full-Stack Solutions Hub? 👨‍💻💻
+## What is Full-Stack Solutions Hub? 👩🏾‍💻💻
 
 Full-Stack Solutions Hub is the one-stop-shop for all your software development needs.
 My repository is a showcase of my diverse capabilities and impeccable craftsmanship. As you explore, you will find a wide range of frontend and backend projects, from responsive web sites and web applications to mobile apps, all created to cater to different businesses, industries, and projects. Whether you are looking for simple projects or more advanced ones that demonstrate a diverse skillset, I have got you covered. Every project is tailored to meet the needs of my clients and employees, and I guarantee satisfaction. I invite you to look through my repository and see for yourself the quality and expertise that I bring to the table.
