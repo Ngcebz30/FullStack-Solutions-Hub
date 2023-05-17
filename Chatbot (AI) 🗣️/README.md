@@ -56,6 +56,4 @@ All rights reserved. This project is protected under  copyright laws. Unauthoriz
 
 This chatbot implementation was inspired by the concept of simple conversational agents and serves as a learning exercise in Python programming.
 
-```
 
-Remember to
